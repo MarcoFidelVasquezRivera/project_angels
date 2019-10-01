@@ -1,11 +1,19 @@
+package model;
+
 public class Candle{
-	
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//			atributes
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	private String color;
-	private int size;
+	private double size;
 	private String essence;
-	private String illuminance;
+	private double illuminance;
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//			methods
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	
-	public Candle(String color, int size, String essence, String illuminance){
+	public Candle(String color, double size, String essence, double illuminance){
 		
 		this.color=color;
 		this.size=size;
@@ -29,14 +37,14 @@ public class Candle{
 	}//fin metodo
 	
 	
-	public int getSize(){
+	public double getSize(){
 		
 		return size;
 		
 	}//fin metodo
 	
 	
-	public void setSize(int size){
+	public void setSize(double size){
 		
 		this.size=size;
 		
@@ -57,14 +65,14 @@ public class Candle{
 	}//finb metodo
 	
 	
-	public String getIlluminance(){
+	public double getIlluminance(){
 	
 		return illuminance;
 	
 	}//fin metodo
 	
 	
-	public void setIlluminance(String illuminance){
+	public void setIlluminance(double illuminance){
 		
 		this.illuminance=illuminance;
 		
@@ -72,14 +80,3 @@ public class Candle{
 	
 	
 }//FIN DE LA CLASE
-
-
-
-
-
-
-
-
-
-
-

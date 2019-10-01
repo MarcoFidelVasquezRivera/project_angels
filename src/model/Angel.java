@@ -1,13 +1,21 @@
-public class Archangel{
+package model;
+
+public class Angel{
 	
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//			atributes
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	private String name;//debe terminar en la silaba "el"
 	private String photo;
 	private String prayer;
 	private Date date;
 	private String power;
 	private Candle candle;
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//			methods
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	
-	public Archangel(String name, String photo, String prayer, Date date, String power, Candle candle){
+	public Angel(String name, String photo, String prayer, Date date, String power, Candle candle){
 
 		this.name=name;
 		this.photo=photo;
