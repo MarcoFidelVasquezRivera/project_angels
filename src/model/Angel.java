@@ -3,7 +3,7 @@ package model;
 public class Angel{
 	
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//			atributes
+//						ATRIBUTES
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	private String name;//debe terminar en la silaba "el"
 	private String photo;
@@ -12,7 +12,7 @@ public class Angel{
 	private String power;
 	private Candle candle;
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//			methods
+//						METHODS
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	
 	public Angel(String name, String photo, String prayer, Date date, String power, Candle candle){

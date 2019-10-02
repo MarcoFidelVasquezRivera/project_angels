@@ -3,14 +3,14 @@ package model;
 public class Candle{
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//			atributes
+//						ATRIBUTES
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	private String color;
 	private double size;
 	private String essence;
 	private double illuminance;
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//			methods
+//						METHODS
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	
 	public Candle(String color, double size, String essence, double illuminance){

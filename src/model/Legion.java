@@ -3,11 +3,11 @@ package model;
 public class Legion{
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//			atributes
+//					ATRIBUTES
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	public Angel[] angels;
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//			methods
+//					METHODS
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 	public void angelInstantiator(int numberAngels){
