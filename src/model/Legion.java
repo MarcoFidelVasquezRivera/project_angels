@@ -10,18 +10,32 @@ public class Legion{
 //			methods
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-	public void angelCreator(int numberAngels){
+	//que el metodo para agregar angeles sea de uno en uno
+
+	public void angelInstantiator(int numberAngels){
 
 		angels = new Angel[numberAngels];
 
 	}//fin del metodo
 
 
+	public void angelCreator(String name, String photo, String prayer, int day, int month, String power, String color, double size, String essence, double illuminance){
+
+		Date date= new Date(month, day);
+		Candle candle= new Candle(color, size, essence, illuminance);
+		
+
+	}//fin del metodo
+
+
 	public int count(){
 
-		int total=angels.length;
+		int count=0;
+		while(angels[count]!=null && count<angels.length){
 
-		return total;
+			count++;
+		}
+		return count;
 	}//fin del metodo
 
 
