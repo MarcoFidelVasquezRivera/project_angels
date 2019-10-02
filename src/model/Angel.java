@@ -75,7 +75,7 @@ public class Angel{
 	}//fin de metodo
 
 
-	public void sertDate(Date date){
+	public void setDate(Date date){
 
 		this.date=date;
 
@@ -103,10 +103,22 @@ public class Angel{
 	}//fin del metodo
 	
 
-	public void setCandle(){
+	public void setCandle(Candle candle){
 
 		this.candle=candle;
 
 	}//fin del metodo
+
+	public Date addDate(int month, int day){
+		Date date= new Date(month,day);
+
+		return date;
+	}
+
+	public Candle addCandle(String color, double size, String essence, double illuminance){
+		Candle candle= new Candle(color, size, essence, illuminance);
+
+		return candle;
+	}
 		
 }//fin de la clase

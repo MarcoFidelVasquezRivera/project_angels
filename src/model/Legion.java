@@ -10,8 +10,6 @@ public class Legion{
 //			methods
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-	//que el metodo para agregar angeles sea de uno en uno
-
 	public void angelInstantiator(int numberAngels){
 
 		angels = new Angel[numberAngels];
@@ -19,22 +17,64 @@ public class Legion{
 	}//fin del metodo
 
 
-	public void angelCreator(String name, String photo, String prayer, int day, int month, String power, String color, double size, String essence, double illuminance){
-
-		Date date= new Date(month, day);
-		Candle candle= new Candle(color, size, essence, illuminance);
-		
-
-	}//fin del metodo
-
-
-	public int count(){
-
+	public String angelCreator(String name, String photo, String prayer, int day, int month, String power, String color, double size, String essence, double illuminance){
+//not finished yet
+		Date date= angels[0].addDate(month,day);
+		Candle candle= angels[0].addCandle(color, size, essence, illuminance);
 		int count=0;
-		while(angels[count]!=null && count<angels.length){
+		boolean flag=false;
+		boolean condition=false;
+		boolean operation=false;
+		String message="";
 
-			count++;
+		if(name.substring(name.length()-2,name.length()).equalsIgnoreCase("el")){
+			while(count<angels.length && !condition){
+
+				if(angels[count]==null){
+					condition=true;
+				}
+				else{
+					if(angels[count].getName().equalsIgnoreCase(name)){
+						operation=true;
+						message="un angel con el mismo nombre ya ha sido ingresado al programa";
+					}
+					else if(angels[count].getPower().equalsIgnoreCase(power)){
+						operation=true;
+						message="un angel con el mismo poder ya ha sido ingresado al programa";
+					}
+				}
+				count++;
+			}//fin del bucle
+
+			count=0;
+
+			while(count<angels.length && !flag && operation==false){
+
+				if(angels[count]==null){
+
+					angels[count]=new Angel(name,photo,prayer,date,power,candle);
+					flag=true;
+					message="el angel ha sido guandado con exito";
+				}//fin del condicional
+
+				count++;
+			}//fin del bucle
 		}
+		else{
+			message="el nombre del angel no termina en el";
+		}
+
+		return message;
+		}//fin del metodo
+
+
+		public int count(){
+
+			int count=0;
+			while(angels[count]!=null && count<angels.length){
+
+				count++;
+			}
 		return count;
 	}//fin del metodo
 
