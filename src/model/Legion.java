@@ -142,68 +142,66 @@ public class Legion{
 
  	}//fin dle metodo
 
-public String allCelebrations(){
-	String celebrations="";
+	public String allCelebrations(){
+		String celebrations="";
 
-	for(int i=0;i<angels.length;i++){
-		if(i>0){
-			celebrations=celebrations+",";
+		for(int i=0;i<angels.length;i++){
+			if(i>0){
+				celebrations=celebrations+",";
+			}
+
+			celebrations=celebrations+angels[i].getName()+":"+String.valueOf(angels[i].getDate().getDay())+"de"+converterMonthString(i);
+
 		}
+		return celebrations;
+	}//fin del metodo
 
-		celebrations=celebrations+angels[i].getName()+":"+String.valueOf(angels[i].getDate().getDay())+"de"+converterMonthString(i);
+	public String converterMonthString(int i){
+		String month="";
 
-	}
-	return celebrations;
-}//fin del metodo
+		int number=angels[i].getDate().getMonth();
 
-public String converterMonthString(int i){
-	String month="";
+		switch (number){
 
-	int number=angels[i].getDate().getMonth();
+			case 1: month="Enero";
+					break;
 
-	switch (number){
+			case 2:	month="Febrero";
+					break;
 
-		case 1: month="Enero";
-				break;
+			case 3: month="Marzo";
+					break;
 
-		case 2:	month="Febrero";
-				break;
+			case 4: month="Abril";
+					break;
 
-		case 3: month="Marzo";
-				break;
+			case 5: month="Mayo";
+					break;
 
-		case 4: month="Abril";
-				break;
+			case 6: month="Junio";
+					break;
 
-		case 5: month="Mayo";
-				break;
+			case 7: month="Julio";
+					break;
 
-		case 6: month="Junio";
-				break;
+			case 8: month="Agosto";
+					break;
 
-		case 7: month="Julio";
-				break;
+			case 9: month="Septiembre";
+					break;
 
-		case 8: month="Agosto";
-				break;
+			case 10: month="Octubre";
+					break;
 
-		case 9: month="Septiembre";
-				break;
+			case 11: month="Noviembre";
+					break;
 
-		case 10: month="Octubre";
-				break;
+			case 12: month="Diciembre";
+					break;
 
-		case 11: month="Noviembre";
-				break;
+		}//fin del switch
 
-		case 12: month="Diciembre";
-				break;
-
-	}//fin del switch
-
-	return month;
-}//fin del metodo
-
-
+		return month;
+	}//fin del metodo
 
 }//FIN DE LA CLASE
