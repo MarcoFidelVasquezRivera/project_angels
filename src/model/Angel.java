@@ -15,14 +15,15 @@ public class Angel{
 //						METHODS
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	
-	public Angel(String name, String photo, String prayer, Date date, String power, Candle candle){
+	public Angel(String name, String photo, String prayer, int day, int month, String power, String color, double size, String essence, double illuminance){
 
+		date=new  Date(month,day);
+		candle= new Candle(color,size,essence,illuminance);
 		this.name=name;
 		this.photo=photo;
 		this.prayer=prayer;
-		this.date=date;
 		this.power=power;
-		this.candle=candle;
+		
 
 	}//fin del metodo constructor
 	
@@ -108,17 +109,5 @@ public class Angel{
 		this.candle=candle;
 
 	}//fin del metodo
-
-	public Date addDate(int month, int day){
-		Date date= new Date(month,day);
-
-		return date;
-	}
-
-	public Candle addCandle(String color, double size, String essence, double illuminance){
-		Candle candle= new Candle(color, size, essence, illuminance);
-
-		return candle;
-	}
 		
 }//fin de la clase

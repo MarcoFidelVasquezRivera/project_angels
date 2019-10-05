@@ -10,6 +10,10 @@ public class Legion{
 //					METHODS
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+	public Legion(){
+
+	}
+
 	public void angelInstantiator(int numberAngels){
 
 		angels = new Angel[numberAngels];
@@ -19,8 +23,6 @@ public class Legion{
 
 	public String angelCreator(String name, String photo, String prayer, int day, int month, String power, String color, double size, String essence, double illuminance){
 //not finished yet
-		Date date= angels[0].addDate(month,day);
-		Candle candle= angels[0].addCandle(color, size, essence, illuminance);
 		int count=0;
 		boolean flag=false;
 		boolean condition=false;
@@ -28,6 +30,7 @@ public class Legion{
 		String message="";
 
 		if(name.substring(name.length()-2,name.length()).equalsIgnoreCase("el")){
+			
 			while(count<angels.length && !condition){
 
 				if(angels[count]==null){
@@ -36,11 +39,11 @@ public class Legion{
 				else{
 					if(angels[count].getName().equalsIgnoreCase(name)){
 						operation=true;
-						message="un angel con el mismo nombre ya ha sido ingresado al programa";
+						message="an angel with the same name already exist";
 					}
 					else if(angels[count].getPower().equalsIgnoreCase(power)){
 						operation=true;
-						message="un angel con el mismo poder ya ha sido ingresado al programa";
+						message="an angel with the same power already exist";
 					}
 				}
 				count++;
@@ -51,152 +54,199 @@ public class Legion{
 			while(count<angels.length && !flag && operation==false){
 
 				if(angels[count]==null){
-
-					angels[count]=new Angel(name,photo,prayer,date,power,candle);
+					
+					angels[count]=new Angel(name,photo,prayer,day,month,power, color, size, essence, illuminance);
 					flag=true;
-					message="el angel ha sido guandado con exito";
+					message="angel has been saved";
 				}//fin del condicional
 
 				count++;
 			}//fin del bucle
 		}
 		else{
-			message="el nombre del angel no termina en el";
+			message="the name of the angel doesn't finish in <el>, could not be saved";
+		}
+
+		if(angels[(angels.length-1)]!=null){
+			message="the program is full, can not save more angels";
 		}
 
 		return message;
 		}//fin del metodo
 
 
-		public int count(){
+	public int count(){
 
-			int count=0;
+		int count=0;
+		if(angels[(angels.length-1)]!=null){
+
+			count=angels.length;
+		}
+		else{
 			while(angels[count]!=null && count<angels.length){
 
 				count++;
 			}
+		}
 		return count;
 	}//fin del metodo
 
 
 	public void informationName(String name){
+		int condition=0;
+		String month="";
+		int numberMonth=0;
 
-		for(int i=0;i<angels.length-1;i++){
 
-			if(angels[i].getName().equalsIgnoreCase(name)){
+		for(int i=0;i<angels.length;i++){
 
-				System.out.println(angels[i].getName());
-				System.out.println(angels[i].getPhoto());
-				System.out.println(angels[i].getPrayer());
-				System.out.println(angels[i].getDate().getMonth());
-				System.out.println(angels[i].getDate().getDay());
-				System.out.println(angels[i].getPower());
-				System.out.println(angels[i].getCandle().getColor());
-				System.out.println(angels[i].getCandle().getSize());
-				System.out.println(angels[i].getCandle().getEssence());
-				System.out.println(angels[i].getCandle().getIlluminance());
+			if(angels[i]!=null){
+
+				if(angels[i].getName().equalsIgnoreCase(name)){
+
+					System.out.println("Name: "+angels[i].getName());
+					System.out.println("photo: "+angels[i].getPhoto());
+					System.out.println("prayer: "+angels[i].getPrayer());
+					numberMonth=angels[i].getDate().getMonth();
+					month="Month: "+converterMonthString(numberMonth);
+					System.out.println(month);
+					System.out.println("Day: "+angels[i].getDate().getDay());
+					System.out.println("Power: "+angels[i].getPower());
+					System.out.println("Color of candle: "+angels[i].getCandle().getColor());
+					System.out.println("Size of candle: "+angels[i].getCandle().getSize());
+					System.out.println("Essence of candle: "+angels[i].getCandle().getEssence());
+					System.out.println("Illuminance of candle: "+angels[i].getCandle().getIlluminance());
+					condition=1;
+				}//fin del condicional
+
 			}//fin del condicional
 
 		}//fin del bucle
+		if(condition==0){
+			System.out.println("angel has not been found");
+		}//fin del condicional
 
 	}//fin del metodo
 
 
 	public void informationPower(String power){
+		String month="";
+		int condition=0;
+		int numberMonth=0;
 
-		for(int i=0;i<angels.length-1;i++){
+		for(int i=0;i<angels.length;i++){
 
-			if(angels[i].getPower().equalsIgnoreCase(power)){
+			if(angels[i]!=null){
 
-				System.out.println(angels[i].getName());
-				System.out.println(angels[i].getPhoto());
-				System.out.println(angels[i].getPrayer());
-				System.out.println(angels[i].getDate().getMonth());
-				System.out.println(angels[i].getDate().getDay());
-				System.out.println(angels[i].getPower());
-				System.out.println(angels[i].getCandle().getColor());
-				System.out.println(angels[i].getCandle().getSize());
-				System.out.println(angels[i].getCandle().getEssence());
-				System.out.println(angels[i].getCandle().getIlluminance());
+				if(angels[i].getPower().equalsIgnoreCase(power)){
+
+					System.out.println("Name: "+angels[i].getName());
+					System.out.println("photo: "+angels[i].getPhoto());
+					System.out.println("prayer: "+angels[i].getPrayer());
+					numberMonth=angels[i].getDate().getMonth();
+					month="Month: "+converterMonthString(numberMonth);
+					System.out.println(month);
+					System.out.println("Day: "+angels[i].getDate().getDay());
+					System.out.println("Power: "+angels[i].getPower());
+					System.out.println("Color of candle: "+angels[i].getCandle().getColor());
+					System.out.println("Size of candle: "+angels[i].getCandle().getSize());
+					System.out.println("Essence of candle: "+angels[i].getCandle().getEssence());
+					System.out.println("Illuminance of candle: "+angels[i].getCandle().getIlluminance());
+					condition=1;
+
+				}//fin del condicional
 
 			}//fin del condicional
 
 		}//fin del bucle
+		if(condition==0){
+			System.out.println("angel has not been found");
+		}//fin del condicional
 
 	}//fin del metodo
 
- 	public void celebrationMonth(String month){
+ 	public void celebrationMonth(int month){
 
  		for(int i=0;i<angels.length;i++){
 
- 			if(converterMonthString(i).equalsIgnoreCase(month)){
+ 			if(angels[i]!=null){
 
- 				System.out.println(angels[i].getName());
- 				System.out.println(angels[i].getDate().getDay());
- 				System.out.println(angels[i].getCandle().getColor());
- 				System.out.println(angels[i].getCandle().getEssence());
+	 			if(angels[i].getDate().getMonth()==month){
+	 				if(i>0){
+	 					System.out.println("+++++++++++++++++++++++++++++");
+	 				}
+	 				System.out.println("Name of angel: "+angels[i].getName());
+	 				System.out.println("Day of celebration: "+angels[i].getDate().getDay());
+	 				System.out.println("Color of candle: "+angels[i].getCandle().getColor());
+	 				System.out.println("Essence of candle: "+angels[i].getCandle().getEssence());
+	
+	 			}//fin del condicional
 
- 			}//fin del condicional
+	 		}//fin del condicional
 
  		}//fin del bucle
+
 
  	}//fin dle metodo
 
 	public String allCelebrations(){
 		String celebrations="";
+		int month=0;
 
 		for(int i=0;i<angels.length;i++){
-			if(i>0){
-				celebrations=celebrations+",";
-			}
 
-			celebrations=celebrations+angels[i].getName()+":"+String.valueOf(angels[i].getDate().getDay())+"de"+converterMonthString(i);
+			if(angels[i]!=null){
+				if(i>0){
+					celebrations=celebrations+",";
+				}
+				month=angels[i].getDate().getMonth();
+				celebrations=celebrations+angels[i].getName()+":"+String.valueOf(angels[i].getDate().getDay())+" de "+converterMonthString(month);
 
-		}
+			}//fin del condicional
+
+		}//fin del bucle
 		return celebrations;
 	}//fin del metodo
 
 	public String converterMonthString(int i){
 		String month="";
 
-		int number=angels[i].getDate().getMonth();
+		switch (i){
 
-		switch (number){
-
-			case 1: month="Enero";
+			case 1: month="January";
 					break;
 
-			case 2:	month="Febrero";
+			case 2:	month="February";
 					break;
 
-			case 3: month="Marzo";
+			case 3: month="March";
 					break;
 
-			case 4: month="Abril";
+			case 4: month="April";
 					break;
 
-			case 5: month="Mayo";
+			case 5: month="May";
 					break;
 
-			case 6: month="Junio";
+			case 6: month="June";
 					break;
 
-			case 7: month="Julio";
+			case 7: month="July";
 					break;
 
-			case 8: month="Agosto";
+			case 8: month="August";
 					break;
 
-			case 9: month="Septiembre";
+			case 9: month="September";
 					break;
 
-			case 10: month="Octubre";
+			case 10: month="October";
 					break;
 
-			case 11: month="Noviembre";
+			case 11: month="November";
 					break;
 
-			case 12: month="Diciembre";
+			case 12: month="December";
 					break;
 
 		}//fin del switch
