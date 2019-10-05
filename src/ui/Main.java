@@ -96,9 +96,8 @@ public class Main{
 	}//fin del metodo
 /**
 *<b>Name:</b> welcomeMenu.<br>
-*This method welcome the user and ask for the number of angels tha the user is going to save<br>
-*<b>Pre:</b> 
-
+*This method welcome the user and ask for the number of angels tha the user is going to save.<br>
+*<b>Pos:</b> the welcome message has been shown.<br>
 */
 
 	public void welcomeMenu(){
@@ -108,6 +107,11 @@ public class Main{
 	
 	}//fin del metodo
 
+/**
+*<b>Name:</b> showMenu.<br>
+*This method welcome the user and ask for the number of angels tha the user is going to save.<br>
+*<b>Pos:</b> the welcome message has been shown.<br>
+*/
 	public void showMenu(){
 	
 		System.out.println("please enter the funtion that you want to do");
