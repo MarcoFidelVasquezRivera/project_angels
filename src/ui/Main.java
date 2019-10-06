@@ -97,7 +97,7 @@ public class Main{
 /**
 *<b>Name:</b> welcomeMenu.<br>
 *This method welcome the user and ask for the number of angels tha the user is going to save.<br>
-*<b>Pos:</b> the welcome message has been shown.<br>
+*<b>Pos:</b> the welcome message has been showed.<br>
 */
 
 	public void welcomeMenu(){
@@ -109,8 +109,8 @@ public class Main{
 
 /**
 *<b>Name:</b> showMenu.<br>
-*This method welcome the user and ask for the number of angels tha the user is going to save.<br>
-*<b>Pos:</b> the welcome message has been shown.<br>
+*This method shows the principal menu.<br>
+*<b>Pos:</b> the principal menu has been showed.<br>
 */
 	public void showMenu(){
 	
@@ -125,6 +125,11 @@ public class Main{
 
 	}//fin del metodo
 
+/**
+*<b>Name:</b> firsthMenu.<br>
+*This method shows the menu, get the information to save a new angel and show a message if the angel has been save or has happened an error.<br>
+*<b>Pos:</b> the menu to save a new angel has been showed.<br>
+*/
 	public void firstMenu(){
 		String name="";
 		String photo="";
@@ -178,7 +183,11 @@ public class Main{
 
 	}//fin del metodo
 
-
+/**
+*<b>Name:</b> secondMenu.<br>
+*This method shows the menu to count the number of angels.<br>
+*<b>Pos:</b> the menu and the number of angels have been showed.<br>
+*/
 	public void secondMenu(){
 		int count=0;
 
@@ -189,7 +198,11 @@ public class Main{
 
 	}//fin del metodo
 
-
+/**
+*<b>Name:</b> thirdMenu.<br>
+*This method shows the menu to show information of an angel by name.<br>
+*<b>Pos:</b> the menu has been showed.<br>
+*/
 	public void thirdMenu(){
 		String name="";
 		System.out.println("Please enter the name of the archangel:");
@@ -200,7 +213,11 @@ public class Main{
 
 	}//fin del metodo
 
-
+/**
+*<b>Name:</b> fourthMenu.<br>
+*This method shows the menu to show information of an angel by power.<br>
+*<b>Pos:</b> the menu has been showed.<br>
+*/
 	public void fourthMenu(){
 		String power="";
 		System.out.println("please enter the power of the archangel:");
@@ -211,7 +228,11 @@ public class Main{
 
 	}//fin del metodo
 
-
+/**
+*<b>Name:</b> fifthMenu.<br>
+*This method shows the menu to show the celebrations to do by month.<br>
+*<b>Pos:</b> the menu has been showed.<br>
+*/
 	public void fifthMenu(){
 		int month=0;
 		while(month<=0 && month>12){
@@ -226,7 +247,11 @@ public class Main{
 
 	}//fin del metodo
 
-
+/**
+*<b>Name:</b> thirdMenu.<br>
+*This method shows all the celebrations to do.<br>
+*<b>Pos:</b> the celebrations have been showed.<br>
+*/
 	public void sixthMenu(){
 		String message="";
 		message=legion.allCelebrations();
@@ -234,7 +259,11 @@ public class Main{
 
 	}//fin del metodo
 
-
+/**
+*<b>Name:</b> init.<br>
+*This method save an angel by default.<br>
+*<b>Pos:</b> the angel has been showed.<br>
+*/
 	public void init(){
 
 		String name="Azrael";
