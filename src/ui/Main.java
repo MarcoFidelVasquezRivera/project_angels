@@ -262,19 +262,19 @@ public class Main{
 /**
 *<b>Name:</b> init.<br>
 *This method save an angel by default.<br>
-*<b>Pos:</b> the angel has been showed.<br>
+*<b>Pos:</b> the angel has been saved.<br>
 */
 	public void init(){
 
-		String name="Azrael";
+		String name="Gabriel";
 		String photo="www.dgedfgea.com";
 		String prayer="melo caramelo";
 		int day=2; 
 		int month=5; 
-		String power="perro"; 
+		String power="Mensajero"; 
 		String color="verde"; 
 		double size=5.2;
-		String essence="limon"; 
+		String essence="citrus"; 
 		double illuminance=5.4;
 
 		legion.angelCreator(name, photo, prayer, day, month, power, color, size, essence, illuminance);
